@@ -1,4 +1,3 @@
-/* Final theme toggle logic (icon-only) */
 $(function () {
   function syncToggle() {
     $("#themeSwitch").attr(
@@ -19,7 +18,6 @@ $(function () {
 
   $("#year").text(new Date().getFullYear());
 
-  // Counters (if present)
   $(".counter").each(function () {
     const $el = $(this),
       target = +($el.data("target") || 0);
@@ -35,7 +33,6 @@ $(function () {
     }, 20);
   });
 
-  // Featured project modal (if exists on page)
   $(".view-details").on("click", function () {
     const title = $(this).data("title");
     const desc = $(this).data("desc");
@@ -46,7 +43,6 @@ $(function () {
     new bootstrap.Modal("#projectModal").show();
   });
 
-  // Interest form inside modal
   $("#interestForm").on("submit", function (e) {
     e.preventDefault();
     const f = $(this);

@@ -90,10 +90,8 @@ $(function () {
     const $img = $("#lightboxImage");
     const $title = $("#lightboxTitle");
 
-    // Reset for clean fade
     $img.stop(true, true).removeClass("fade-in").addClass("fade-out");
 
-    // Once faded out, swap src then fade back in after load
     setTimeout(() => {
       $img.attr({ src: item.src, alt: item.title });
       $title.text(item.title);
@@ -106,7 +104,6 @@ $(function () {
       };
       $img.on("load", onLoad);
 
-      // Fallback: if cached image triggers too fast
       setTimeout(() => {
         $img.triggerHandler("load");
       }, 250);
