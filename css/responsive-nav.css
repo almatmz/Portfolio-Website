@@ -1,0 +1,129 @@
+.nav-toggle {
+  display: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0.4rem;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+.nav-toggle-bars {
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  display: inline-block;
+}
+
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 200ms ease, top 200ms ease, opacity 200ms ease;
+}
+
+.nav-toggle-bars::before {
+  top: -6px;
+}
+.nav-toggle-bars::after {
+  top: 6px;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars {
+  background: transparent;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 992px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: inherit;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    color: inherit;
+    margin-right: 0.25rem;
+  }
+
+  .site-header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .site-header .main-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    display: none;
+    background: var(--surface, #ffffff);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 0.75rem 1rem;
+  }
+
+  .site-header .main-nav.is-open {
+    display: block;
+    animation: navSlideDown 180ms ease-out;
+  }
+
+  @keyframes navSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .site-header .main-nav ul {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  .site-header .main-nav a {
+    padding: 0.25rem 0;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .site-header {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .site-header .main-nav {
+    padding: 0.5rem 0.75rem;
+  }
+}

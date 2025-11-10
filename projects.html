@@ -10,6 +10,7 @@
         } catch (e) {}
       })();
     </script>
+    <script src="js/responsive-nav.js"></script>
     <meta charset="UTF-8" />
     <title>Projects - CRUD & Search</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -22,6 +23,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive-nav.css" />
   </head>
   <body>
     <header
@@ -94,7 +96,6 @@
         </table>
       </div>
 
-      <!-- Add Modal -->
       <div
         class="modal fade"
         id="addProjectModal"
@@ -114,7 +115,13 @@
             <div class="modal-body row g-3">
               <div class="col-sm-6">
                 <label class="form-label">Title</label>
-                <input type="text" class="form-control" name="title" required />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  placeholder="title"
+                  required
+                />
               </div>
               <div class="col-sm-6">
                 <label class="form-label">Category</label>
@@ -122,6 +129,7 @@
                   type="text"
                   class="form-control"
                   name="category"
+                  placeholder="category"
                   required
                 />
               </div>
@@ -131,6 +139,7 @@
                   type="number"
                   class="form-control"
                   name="year"
+                  placeholder="year"
                   required
                 />
               </div>
@@ -155,7 +164,6 @@
         </div>
       </div>
 
-      <!-- Edit Modal -->
       <div
         class="modal fade"
         id="editProjectModal"
