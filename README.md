@@ -4,8 +4,8 @@
 
 An individually developed responsive portfolio website showcasing my skills, projects, gallery, and contact information. The project fulfills all mandatory requirements (HTML, CSS, JavaScript/jQuery, responsiveness, CRUD, filtering/lightbox, form validation) plus optional dark/light theme persistence. It is deployed on GitHub Pages / Netlify.
 
-Live URL: **[https://your-deployment-url.example](https://almatmz.github.io/Portfolio-Website/)**  
-Author: **Almat Muzdybay**
+Live URL: **https://almatmz.github.io/Portfolio-Website/**  
+Netlify URL:**https://portfolioalmat.netlify.app/**
 
 ---
 
@@ -16,7 +16,7 @@ Author: **Almat Muzdybay**
 | Home     | Intro hero + featured projects      | Hero section (Grid), CTA buttons, modal trigger          |
 | About    | Biography & Skills                  | Responsive image, skills/achievements table              |
 | Projects | Dynamic CRUD management             | Search, sort, add/edit/delete (modals), animations       |
-| Gallery  | Filterable image gallery + lightbox | Category filters, fade transitions, prev/next navigation |
+| My websites  | Filterable image gallery + lightbox | Category filters, fade transitions, prev/next navigation |
 | Contact  | User communication                  | Validated form, password strength meter                  |
 
 ![alt text](images/image.png)
@@ -44,11 +44,13 @@ All pages share a common `<header>`, `<nav>`, `<footer>` and responsive layout.
 ├─ contact.html
 ├─ css/
 │  └─ style.css
+│  └─ responsive-nav.css
 ├─ js/
 │  ├─ main.js        (theme toggle, navigation, shared modal/form logic)
 │  ├─ crud.js        (projects CRUD table)
 │  ├─ gallery.js     (gallery filtering + lightbox)
 │  └─ form.js        (contact form validation & password strength)
+│  └─ responsive-nav.js
 ├─ images/           (project + gallery images)
 ├─ data/             (JSON gallery load implemented)
 └─ README.md
@@ -161,4 +163,4 @@ Implemented at least three:
 | `js/crud.js`              | Projects CRUD logic (add/edit/delete/search/sort) + animations             |
 | `js/gallery.js`           | Gallery rendering, category filtering, lightbox image transitions          |
 | `js/form.js`              | Contact form validation + password strength meter                          |
-| `data/gallery-items.json` | External JSON data source (if dynamic loading used)                        |
+| `data/gallery-items.json` | External JSON data source                        |
